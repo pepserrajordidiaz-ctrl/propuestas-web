@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>La Volta · Cuina italocatalana a Granollers (proposta de disseny)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f5ede1;--paper:#fbf7f0;--ink:#231a15;--terra:#b0482a;--terra2:#d26a3f;--olive:#55603a;--gold:#c9a36a;--muted:#7b6b5e}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{font-family:Jost,system-ui,sans-serif;font-weight:400;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.serif{font-family:"Cormorant Garamond",Georgia,serif}
+.demo-bar{position:fixed;top:0;left:0;right:0;z-index:100;background:#141010;color:#eadfce;font-size:12px;text-align:center;padding:7px 12px;letter-spacing:.02em}
+.demo-bar b{color:var(--gold);font-weight:500}
+/* photo slots */
+[data-photo]{background:#3a2a22 center/cover no-repeat;position:relative;overflow:hidden}
+[data-photo].no-photo{background:
+ radial-gradient(120% 80% at 20% 10%,#c5703f55,transparent 60%),
+ radial-gradient(90% 70% at 90% 90%,#55603a66,transparent 60%),
+ repeating-linear-gradient(45deg,#2c211b 0 2px,#31251e 2px 7px)}
+.ph-label{position:absolute;left:14px;bottom:14px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#f5ede1;background:#0007;border:1px solid #fff3;padding:6px 10px;border-radius:999px;backdrop-filter:blur(4px)}
+/* nav */
+nav{position:fixed;top:30px;left:0;right:0;z-index:90;display:flex;align-items:center;justify-content:space-between;padding:18px 5vw;transition:background .4s,top .4s,padding .4s}
+nav.solid{background:#fbf7f0ee;backdrop-filter:blur(10px);box-shadow:0 1px 0 #0001;padding:12px 5vw}
+nav .brand{font-family:"Cormorant Garamond",serif;font-size:30px;font-style:italic;color:#fff;letter-spacing:.02em;text-decoration:none}
+nav.solid .brand,nav.solid .links a{color:var(--ink)}
+nav .links{display:flex;gap:28px;align-items:center}
+nav .links a{color:#fff;text-decoration:none;font-size:13px;letter-spacing:.16em;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--terra);color:#fff!important;text-decoration:none;padding:14px 26px;border-radius:999px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;border:0;cursor:pointer;font-family:inherit;transition:transform .25s,background .25s}
+.btn:hover{transform:translateY(-2px);background:var(--terra2)}
+.btn.line{background:transparent;border:1px solid #fff9}
+.btn.line.dark{border-color:var(--ink);color:var(--ink)!important}
+/* hero */
+.hero{position:relative;height:100vh;min-height:640px;overflow:hidden;color:#fff;display:flex;align-items:flex-end}
+.hero-bg{position:absolute;inset:-60px 0 0;transform:scale(1.08)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0007 0%,#0000 30%,#0000 45%,#000c 100%)}
+.hero-inner{position:relative;z-index:2;padding:0 5vw 9vh;max-width:1100px}
+.eyebrow{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.hero h1{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(54px,9vw,140px);line-height:.92;margin:18px 0 22px;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;color:#f0c9a8}
+.hero p{max-width:46ch;font-size:18px;font-weight:300;opacity:.92;margin-bottom:30px}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:13px;margin-left:16px;opacity:.9}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:#9a9a9a}
+.status.is-open::before{background:#7fd38a;box-shadow:0 0 0 4px #7fd38a33}
+.status.is-closed::before{background:#e29a7a}
+.scroll-cue{position:absolute;right:5vw;bottom:9vh;z-index:2;writing-mode:vertical-rl;font-size:11px;letter-spacing:.3em;text-transform:uppercase;opacity:.7}
+/* sections */
+section{padding:120px 5vw}
+.wrap{max-width:1240px;margin:0 auto}
+h2{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(40px,5.2vw,76px);line-height:1;letter-spacing:-.01em}
+h2 em{font-style:italic;color:var(--terra)}
+.lead{font-size:19px;font-weight:300;color:var(--muted);max-width:52ch}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+/* manifesto */
+.manifesto{display:grid;grid-template-columns:1.05fr .95fr;gap:7vw;align-items:center}
+.manifesto .stack{position:relative;height:620px}
+.manifesto .p1{position:absolute;inset:0 22% 18% 0;border-radius:4px}
+.manifesto .p2{position:absolute;right:0;bottom:0;width:48%;height:52%;border:10px solid var(--paper);border-radius:4px;box-shadow:0 30px 60px -30px #0006}
+.quote{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:28px;line-height:1.3;margin:34px 0 10px;padding-left:22px;border-left:2px solid var(--gold)}
+.quote cite{display:block;font-family:Jost;font-style:normal;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.stats{display:flex;gap:44px;margin-top:40px}
+.stats b{display:block;font-family:"Cormorant Garamond",serif;font-size:54px;font-weight:500;line-height:1;color:var(--terra)}
+.stats span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+/* two roots */
+.roots{background:var(--ink);color:var(--cream)}
+.roots h2 em{color:var(--gold)}
+.roots .lead{color:#cdbfae}
+.root-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:60px}
+.flip{perspective:1400px;height:470px;cursor:pointer}
+.flip-in{position:relative;width:100%;height:100%;transition:transform 1s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d}
+.flip:hover .flip-in,.flip.on .flip-in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:4px;overflow:hidden}
+.face.front [data-photo]{position:absolute;inset:0}
+.face.front .cap{position:absolute;left:0;right:0;bottom:0;padding:26px;background:linear-gradient(0deg,#000d,#0000)}
+.face.front h3{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:32px;line-height:1.05}
+.face.front small{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.face.back{transform:rotateY(180deg);background:var(--terra);padding:34px;display:flex;flex-direction:column;justify-content:space-between}
+.face.back .rt{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.face.back .rt div{border-top:1px solid #fff6;padding-top:12px}
+.face.back .rt b{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.8;margin-bottom:6px}
+.face.back h3{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:34px;line-height:1.05}
+.hint{margin-top:26px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#bfae99}
+/* carta */
+.carta-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:44px 0 40px;border-bottom:1px solid #e3d6c4}
+.tabs button{background:none;border:0;padding:14px 18px;font-family:inherit;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+.tabs button.on{color:var(--ink);border-color:var(--terra)}
+.dishes{display:grid;grid-template-columns:repeat(3,1fr);gap:34px}
+.dish [data-photo]{aspect-ratio:4/5;border-radius:4px;transition:transform .8s}
+.dish:hover [data-photo]{transform:scale(1.02)}
+.dish h4{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:28px;margin:18px 0 4px;line-height:1.1}
+.dish p{font-size:14px;color:var(--muted)}
+.dish .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.dish .pr{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.note{font-size:13px;color:var(--muted);margin-top:34px}
+/* spaces */
+.spaces{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:330px 330px;gap:18px;margin-top:56px}
+.space{border-radius:4px;position:relative;color:#fff}
+.space:first-child{grid-row:1/3}
+.space .cap{position:absolute;inset:auto 0 0 0;padding:28px;background:linear-gradient(0deg,#000c,#0000)}
+.space h3{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:34px}
+.space p{font-size:15px;opacity:.9;max-width:40ch}
+/* reviews */
+.reviews{background:var(--cream)}
+.rv-top{display:flex;align-items:end;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.score{display:flex;align-items:baseline;gap:14px}
+.score b{font-family:"Cormorant Garamond",serif;font-size:96px;line-height:1;color:var(--terra);font-weight:500}
+.stars{color:var(--gold);letter-spacing:4px;font-size:18px}
+.rv{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px}
+.rv blockquote{background:var(--paper);padding:34px;border-radius:4px;font-family:"Cormorant Garamond",serif;font-size:25px;line-height:1.3}
+.rv cite{display:block;font-family:Jost;font-style:normal;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:18px}
+/* book */
+.book{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0;background:var(--ink);color:var(--cream)}
+.book .img{min-height:720px}
+.book .form{padding:110px 6vw}
+.book h2 em{color:var(--gold)}
+form{display:grid;gap:14px;margin-top:36px;max-width:460px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#bfae99;display:grid;gap:8px}
+input,select{background:transparent;border:0;border-bottom:1px solid #fff4;color:#fff;padding:12px 2px;font-family:inherit;font-size:16px}
+select option{color:#000}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chips input{display:none}
+.chips span{display:inline-block;padding:10px 16px;border:1px solid #fff4;border-radius:999px;font-size:13px;cursor:pointer}
+.chips input:checked+span{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.demo-ok{font-family:"Cormorant Garamond",serif;font-size:30px;color:var(--gold)}
+/* visit */
+.visit{display:grid;grid-template-columns:1fr 1.2fr;gap:6vw;align-items:start}
+.hours{list-style:none;margin-top:30px}
+.hours li{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid #e3d6c4;font-size:15px}
+.hours li.today{color:var(--terra);font-weight:500}
+.map{width:100%;height:440px;border:0;border-radius:4px;filter:grayscale(.4) sepia(.15)}
+footer{padding:60px 5vw 120px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--muted);border-top:1px solid #e3d6c4}
+footer .brand{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:34px;color:var(--ink)}
+.mbar{display:none}
+@media(max-width:900px){
+ nav .links a:not(.btn){display:none}
+ section{padding:80px 6vw}
+ .manifesto,.book,.visit{grid-template-columns:1fr}
+ .manifesto .stack{height:460px}
+ .root-grid,.dishes,.rv{grid-template-columns:1fr}
+ .flip{height:420px}
+ .spaces{grid-template-columns:1fr;grid-template-rows:300px 240px 240px}
+ .space:first-child{grid-row:auto}
+ .book .img{min-height:340px}
+ .book .form{padding:70px 6vw}
+ .scroll-cue{display:none}
+ .stats{gap:26px}
+ .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:95;gap:8px}
+ .mbar a{flex:1;justify-content:center}
+ .mbar .call{flex:0 0 auto;background:var(--ink)}
+}
+</style>
+</head>
+<body>
+<div class="demo-bar"><b>Proposta de disseny</b> preparada per Pep per a La Volta · No és la web oficial del restaurant</div>
+
+<nav id="nav">
+  <a class="brand" href="#">La Volta</a>
+  <div class="links"><a href="#cuina">La cuina</a><a href="#carta">Carta</a><a href="#espais">Espais</a><a href="#visita">On som</a><a class="btn" href="#reserva">Reservar</a></div>
+</nav>
+
+<header class="hero">
+  <div class="hero-bg" data-photo="fotos/la-volta/hero.jpg" data-label="El jardí"></div>
+  <div class="hero-inner">
+    <div class="eyebrow reveal">Granollers · Cuina italocatalana</div>
+    <h1 class="reveal d1">Itàlia,<br>amb <em>producte</em><br>del Vallès.</h1>
+    <p class="reveal d2">“Un jardí on el temps es saboreja.” Cuina italiana de qualitat amb producte de proximitat, al jardí o a la nostra sala privada.</p>
+    <div class="reveal d3"><a class="btn" href="#reserva">Reservar taula</a> <a class="btn line" href="#carta">Veure la carta</a><span class="status" data-open></span></div>
+  </div>
+  <div class="scroll-cue">Descobreix</div>
+</header>
+
+<section id="cuina">
+  <div class="wrap manifesto">
+    <div class="stack reveal">
+      <div class="p1" data-photo="fotos/la-volta/local-1.jpg" data-label="Foto: una de les sales"></div>
+      <div class="p2" data-photo="fotos/la-volta/plato-2.jpg" data-label="Risotto"></div>
+    </div>
+    <div>
+      <div class="eyebrow reveal" style="color:var(--terra)">La nostra cuina</div>
+      <h2 class="reveal d1">Dues arrels,<br><em>un sol plat.</em></h2>
+      <p class="lead reveal d2" style="margin-top:26px">Receptes del nord d'Itàlia fetes amb producte d'aquí: el vitello tonnato amb vedella de proximitat, els cappellacci farcits de botifarra negra, el risotto de safrà i porcini. Un jardí tranquil, una sala amb parets de pedra i ganes de fer-vos sentir com a casa.</p>
+      <div class="quote reveal d3">“Tras mucho probar, afirmo que éste es el mejor restaurante de Granollers.”<cite>Ressenya de client</cite></div>
+      <div class="stats reveal d3"><div><b>4,8</b><span>a Google</span></div><div><b>364</b><span>ressenyes</span></div><div><b>Nº1</b><span>a GastroRanking Granollers</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="roots">
+  <div class="wrap">
+    <div class="eyebrow reveal">Peça única · Només a La Volta</div>
+    <h2 class="reveal d1">Cada plat té <em>dues arrels.</em></h2>
+    <p class="lead reveal d2" style="margin-top:20px">Gira la targeta: a una banda, el plat; a l'altra, d'on ve la idea italiana i què hi posa el Vallès.</p>
+     <div class="root-grid">
+      <div class="flip reveal"><div class="flip-in">
+        <div class="face front"><div data-photo="fotos/la-volta/plato-4.jpg" data-label="Vitello tonnato"></div><div class="cap"><small>Per començar</small><h3>Vitello tonnato</h3></div></div>
+        <div class="face back"><h3>Vitello tonnato</h3><div class="rt"><div><b>Arrel italiana</b>Una recepta típica del nord d'Itàlia.</div><div><b>Arrel del Vallès</b>La fem amb vedella de proximitat.</div></div></div>
+      </div></div>
+      <div class="flip reveal d1"><div class="flip-in">
+        <div class="face front"><div data-photo="fotos/la-volta/plato-1.jpg" data-label="Cappellacci"></div><div class="cap"><small>Pasta</small><h3>Cappellacci de botifarra negra</h3></div></div>
+        <div class="face back"><h3>Cappellacci de botifarra negra</h3><div class="rt"><div><b>Arrel italiana</b>Pasta farcida, crema de scamorza fumada.</div><div><b>Arrel catalana</b>Botifarra negra, poma rostida i avellanes.</div></div></div>
+      </div></div>
+      <div class="flip reveal d2"><div class="flip-in">
+        <div class="face front"><div data-photo="fotos/la-volta/plato-2.jpg" data-label="Risotto"></div><div class="cap"><small>Risotto</small><h3>Safrà, porcini i guanciale</h3></div></div>
+        <div class="face back"><h3>Risotto de safrà</h3><div class="rt"><div><b>Arrel italiana</b>Risotto cremós amb guanciale cruixent.</div><div><b>De temporada</b>Safrà i funghi porcini.</div></div></div>
+      </div></div>
+    </div>
+    <div class="hint reveal">↻ Passa el ratolí o toca per girar</div>
+  </div>
+</section>
+
+<section id="carta">
+  <div class="wrap">
+    <div class="carta-head">
+      <div><div class="eyebrow reveal" style="color:var(--terra)">La carta</div><h2 class="reveal d1">Per obrir <em>la gana.</em></h2></div>
+      <p class="lead reveal d2">La carta sempre al dia: la xef la canvia des del mòbil i surt aquí al moment, amb foto de cada plat.</p>
+    </div>
+    <div class="tabs" data-tabs>
+      <button class="on" data-tab="e">Per començar</button><button data-tab="p">Pasta i risotto</button><button data-tab="s">Peix i carn</button><button data-tab="d">Postres</button>
+    </div>
+    <div class="dishes" data-panel="e">
+      <div class="dish reveal"><div data-photo="fotos/la-volta/plato-4.jpg" data-label="Vitello tonnato"></div><div class="row"><h4>Vitello tonnato</h4><span class="pr">Segons carta</span></div><p>La nostra versió de la recepta del nord d'Itàlia, amb vedella de proximitat.</p></div>
+      <div class="dish reveal d1"><div data-photo="fotos/la-volta/plato-6.jpg" data-label="Steak tàrtar"></div><div class="row"><h4>Steak tàrtar</h4><span class="pr">Segons carta</span></div><p>Verduretes encurtides, pa carasau i maionesa amb un toc picant.</p></div>
+    </div>
+    <div class="dishes" data-panel="p" hidden>
+      <div class="dish"><div data-photo="fotos/la-volta/plato-1.jpg" data-label="Cappellacci"></div><div class="row"><h4>Cappellacci de botifarra negra</h4><span class="pr">Segons carta</span></div><p>Poma rostida, crema de formatge scamorza fumat i avellanes.</p></div>
+      <div class="dish"><div data-photo="fotos/la-volta/plato-2.jpg" data-label="Risotto"></div><div class="row"><h4>Risotto de safrà</h4><span class="pr">Segons carta</span></div><p>Funghi porcini i guanciale cruixent.</p></div>
+    </div>
+    <div class="dishes" data-panel="s" hidden>
+      <div class="dish"><div data-photo="fotos/la-volta/plato-8.jpg" data-label="Corvina"></div><div class="row"><h4>Corvina salvatge</h4><span class="pr">Segons carta</span></div><p>Crema de pèsols amb cansalada i reducció de crustacis.</p></div>
+    </div>
+    <div class="dishes" data-panel="d" hidden>
+      <div class="dish"><div data-photo="fotos/la-volta/plato-3.jpg" data-label="Cheesecake"></div><div class="row"><h4>Cheesecake d'alvocat</h4><span class="pr">Segons carta</span></div><p>Amb coulis de cirera amarena.</p></div>
+    </div>
+    <p class="note">Plats publicats al vostre Instagram. Els preus s'omplen amb la carta actual.</p>
+  </div>
+</section>
+
+<section id="espais" style="padding-top:0">
+  <div class="wrap">
+    <div class="eyebrow reveal" style="color:var(--terra)">Els espais</div>
+    <h2 class="reveal d1">Tria on vols <em>seure.</em></h2>
+    <div class="spaces">
+      <div class="space reveal" data-photo="fotos/la-volta/hero.jpg" data-label="El jardí"><div class="cap"><h3>El jardí</h3><p>Per als mesos de bon temps. Es pot triar en reservar.</p></div></div>
+      <div class="space reveal d1" data-photo="fotos/la-volta/local-1.jpg" data-label="La sala"><div class="cap"><h3>La sala de pedra</h3><p>Parets de pedra i maó vist, per a un sopar tranquil.</p></div></div>
+      <div class="space reveal d2" data-photo="fotos/la-volta/plato-6.jpg" data-label="Grups"><div class="cap"><h3>Sala privada per a grups</h3><p>Demaneu informació i disponibilitat directament des de la web.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="wrap">
+    <div class="rv-top">
+      <div><div class="eyebrow reveal" style="color:var(--terra)">El que diuen</div><h2 class="reveal d1">Ho diuen <em>ells.</em></h2></div>
+      <div class="score reveal d2"><b>4,8</b><div><div class="stars">★★★★★</div><span style="font-size:13px;color:var(--muted)">364 ressenyes a Google</span></div></div>
+    </div>
+    <div class="rv">
+      <blockquote class="reveal">“Best restaurant in town!”<cite>Google</cite></blockquote>
+      <blockquote class="reveal d1">“This is a jewel of a restaurant.”<cite>Google</cite></blockquote>
+      <blockquote class="reveal d2">“Amazing food, lovely waiters, and a cosy interior.”<cite>Google</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="reserva">
+  <div class="img" data-photo="fotos/la-volta/local-1.jpg" data-label="La sala"></div>
+  <div class="form">
+    <div class="eyebrow">Reserva directa · Sense comissions</div>
+    <h2 style="margin-top:14px">Us guardem<br><em>la taula.</em></h2>
+    <form data-demo>
+      <div class="f2"><label>Dia<input type="date" required></label><label>Hora<select><option>13:00</option><option>13:30</option><option>14:00</option><option>20:00</option><option>20:30</option><option>21:00</option></select></label></div>
+      <label>Persones<select><option>2</option><option>3</option><option>4</option><option>5</option><option>6 o més</option></select></label>
+      <label>On voleu seure</label>
+      <div class="chips"><label style="all:unset"><input type="radio" name="z" checked><span>Sala</span></label><label style="all:unset"><input type="radio" name="z"><span>Jardí</span></label><label style="all:unset"><input type="radio" name="z"><span>Sala privada (grups)</span></label></div>
+      <label>Nom i telèfon<input required placeholder=" "></label>
+      <button class="btn" style="justify-self:start;margin-top:10px">Confirmar reserva</button>
+    </form>
+  </div>
+</section>
+
+<section id="visita">
+  <div class="wrap visit">
+    <div>
+      <div class="eyebrow reveal" style="color:var(--terra)">On som</div>
+      <h2 class="reveal d1">Vine a <em>La Volta.</em></h2>
+      <p class="lead reveal d2" style="margin-top:20px">Carrer de Josep Umbert i Ventura, 113 · Granollers<br><a href="https://www.instagram.com/lavoltagranollers/">@lavoltagranollers</a> · <a href="tel:+34634407770">634 40 77 70</a></p>
+      <p class="reveal d2" style="margin-top:14px"><span class="status" data-open style="margin-left:0;color:var(--ink)"></span></p>
+      <ul class="hours reveal d3" data-hours></ul>
+    </div>
+    <iframe class="map reveal" loading="lazy" src="https://www.google.com/maps?q=La%20Volta%20Restaurant%20Granollers&output=embed" title="Mapa"></iframe>
+  </div>
+</section>
+
+<footer><span class="brand">La Volta</span><span>Proposta de disseny de Pep · pepwebbuilder@gmail.com</span></footer>
+<div class="mbar"><a class="btn call" href="tel:+34634407770">☎</a><a class="btn" href="#reserva">Reservar taula</a></div>
+
+<script>
+window.HOURS=[[],[],[],[[750,930]],[[750,900],[1200,1350]],[[750,930],[1170,1350]],[[750,930]]];
+document.querySelectorAll('.flip').forEach(function(f){f.addEventListener('click',function(){f.classList.toggle('on')})});
+var nav=document.getElementById('nav');window.addEventListener('scroll',function(){nav.classList.toggle('solid',scrollY>60)},{passive:true});
+// Shared demo helpers (inlined into each page at build time)
+(function(){
+  // Photo slots: load fotos/<slug>/<file>; if missing, show labelled textured placeholder
+  document.querySelectorAll('[data-photo]').forEach(function(el){
+    var src=el.getAttribute('data-photo'), img=new Image();
+    img.onload=function(){el.style.backgroundImage='url("'+src+'")';el.classList.add('has-photo')};
+    img.onerror=function(){el.classList.add('no-photo');if(!el.querySelector('.ph-label')){var s=document.createElement('span');s.className='ph-label';s.textContent=el.getAttribute('data-label')||'Foto';el.appendChild(s)}};
+    img.src=src;
+  });
+  // Reveal on scroll
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els=document.querySelectorAll('.reveal');
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')})}
+  else{var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.15});els.forEach(function(e){io.observe(e)})}
+  // Hero parallax
+  var hero=document.querySelector('.hero-bg');
+  if(hero&&!reduce){window.addEventListener('scroll',function(){var y=window.scrollY;if(y<900)hero.style.transform='translateY('+(y*0.25)+'px) scale(1.08)'},{passive:true})}
+  // Open now: window.HOURS = [[mon...],...] each day = list of [startMin,endMin]
+  if(window.HOURS){
+    var d=new Date(),t=(d.getDay()+6)%7,m=d.getHours()*60+d.getMinutes(),today=window.HOURS[t]||[];
+    var open=today.some(function(r){return m>=r[0]&&m<r[1]});
+    var next=null;for(var k=0;k<8&&!next;k++){var day=(t+k)%7;(window.HOURS[day]||[]).forEach(function(r){if(!next&&(k>0||r[0]>m))next={k:k,day:day,s:r[0]}})}
+    var names=window.DAYNAMES||['dilluns','dimarts','dimecres','dijous','divendres','dissabte','diumenge'];
+    var fmt=function(x){return String(Math.floor(x/60)).padStart(2,'0')+':'+String(x%60).padStart(2,'0')};
+    var txt=open?(window.TXT_OPEN||'Obert ara'):(next?((window.TXT_CLOSED||'Tancat · obrim ')+(next.k===0?'avui':next.k===1?'demà':names[next.day])+' a les '+fmt(next.s)):'Tancat');
+    document.querySelectorAll('[data-open]').forEach(function(el){el.textContent=txt;el.classList.add(open?'is-open':'is-closed')});
+    document.querySelectorAll('[data-hours]').forEach(function(el){
+      el.innerHTML=window.HOURS.map(function(r,i){return '<li class="'+(i===t?'today':'')+'"><span>'+names[i].charAt(0).toUpperCase()+names[i].slice(1)+'</span><span>'+(r.length?r.map(function(x){return fmt(x[0])+'–'+fmt(x[1])}).join(' · '):'Tancat')+'</span></li>'}).join('')});
+  }
+  // Demo forms
+  document.querySelectorAll('form[data-demo]').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();f.innerHTML='<p class="demo-ok">✓ Demo: aquí us arribaria la reserva al mòbil o al correu.</p>'})});
+  // Tabs
+  document.querySelectorAll('[data-tabs]').forEach(function(w){var bs=w.querySelectorAll('[data-tab]');bs.forEach(function(b){b.addEventListener('click',function(){bs.forEach(function(x){x.classList.remove('on')});b.classList.add('on');var id=b.getAttribute('data-tab');document.querySelectorAll('[data-panel]').forEach(function(p){p.hidden=p.getAttribute('data-panel')!==id})})})});
+})();
+
+</script>
+</body>
+</html>

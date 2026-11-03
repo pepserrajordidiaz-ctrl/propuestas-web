@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Can Torreca · Formatges, embotits i fondue a Terrassa (proposta de disseny)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500;1,700&family=Karla:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--night:#14100e;--night2:#1d1714;--wine:#6b1d29;--wine2:#8a2a38;--gold:#e2b45a;--cheese:#f2d892;--paper:#f3ebdf;--muted:#a8998a}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{font-family:Karla,system-ui,sans-serif;background:var(--night);color:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.demo-bar{position:fixed;top:0;left:0;right:0;z-index:100;background:#000;color:#ddd;font-size:12px;text-align:center;padding:7px 12px}
+.demo-bar b{color:var(--gold);font-weight:500}
+[data-photo]{background:#2a201b center/cover no-repeat;position:relative;overflow:hidden}
+[data-photo].no-photo{background:radial-gradient(60% 50% at 50% 45%,#e2b45a33,transparent 70%),radial-gradient(120% 90% at 0% 100%,#6b1d2955,transparent 60%),#1f1815}
+.ph-label{position:absolute;left:14px;bottom:14px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cheese);background:#000a;border:1px solid #e2b45a55;padding:6px 10px;border-radius:999px}
+nav{position:fixed;top:30px;left:0;right:0;z-index:90;display:flex;justify-content:space-between;align-items:center;padding:18px 5vw;transition:all .4s}
+nav.solid{background:#14100eeb;backdrop-filter:blur(10px);padding:12px 5vw;box-shadow:0 1px 0 #ffffff12}
+.brand{font-family:"Playfair Display",serif;font-weight:900;font-size:26px;text-decoration:none;letter-spacing:.02em}
+.brand i{font-weight:500;color:var(--gold)}
+.links{display:flex;gap:26px;align-items:center}
+.links a:not(.btn){text-decoration:none;font-size:14px;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--night)!important;padding:14px 26px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px -14px var(--gold)}
+.btn.o{background:transparent;color:var(--paper)!important;border:1px solid #ffffff40}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:14px;padding:7px 14px;border-radius:999px;background:#ffffff12}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:#999}
+.status.is-open::before{background:#7fd38a;box-shadow:0 0 0 4px #7fd38a33}.status.is-closed::before{background:#e9907a}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:-60px 0 0;transform:scale(1.08)}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(80% 80% at 70% 50%,#0000 0%,#000a 70%),linear-gradient(90deg,#000d 0%,#0004 60%)}
+.hero-inner{position:relative;z-index:2;padding:120px 5vw 80px;max-width:900px}
+.eyebrow{font-size:13px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.hero h1{font-family:"Playfair Display",serif;font-weight:900;font-size:clamp(54px,8.5vw,136px);line-height:.9;margin:18px 0 22px;letter-spacing:-.01em}
+.hero h1 i{font-weight:500;color:var(--cheese)}
+.hero p{font-size:19px;font-weight:300;opacity:.88;max-width:44ch;margin-bottom:30px}
+section{position:relative;z-index:2;padding:120px 5vw}
+.wrap{max-width:1240px;margin:0 auto}
+h2{font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(40px,5vw,74px);line-height:1}
+h2 i{font-weight:500;color:var(--gold)}
+.lead{font-size:19px;font-weight:300;color:#cbbfb1;max-width:54ch}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s,transform .9s cubic-bezier(.2,.7,.2,1)}.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+/* trio */
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
+.card{border-radius:20px;overflow:hidden;background:var(--night2);border:1px solid #ffffff12}
+.card [data-photo]{aspect-ratio:4/3;transition:transform .8s}.card:hover [data-photo]{transform:scale(1.04)}
+.card div.t{padding:26px}
+.card h3{font-family:"Playfair Display",serif;font-size:28px;font-weight:700}
+.card p{color:#cbbfb1;font-size:15px;margin-top:6px}
+/* builder */
+.builder{background:var(--paper);color:var(--night);border-radius:32px;margin:0 3vw;padding:90px 5vw}
+.builder h2 i{color:var(--wine)}
+.builder .lead{color:#5d5046}
+.bgrid{display:grid;grid-template-columns:1.35fr 1fr;gap:4vw;margin-top:46px}
+.opt{display:grid;grid-template-columns:86px 1fr auto;gap:18px;align-items:center;padding:16px 0;border-bottom:1px solid #d9ccb9}
+.opt [data-photo]{width:86px;height:86px;border-radius:14px}
+.opt .ph-label{display:none}
+.opt h4{font-family:"Playfair Display",serif;font-weight:700;font-size:21px;line-height:1.15}
+.opt small{color:#7a6b5e}
+.qty{display:flex;align-items:center;gap:10px}
+.qty button{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--night);background:transparent;font-size:18px;cursor:pointer;transition:background .2s}
+.qty button:hover{background:var(--night);color:var(--paper)}
+.qty b{min-width:20px;text-align:center;font-size:18px}
+.summary{background:var(--wine);color:#fff;border-radius:24px;padding:32px;position:sticky;top:90px;align-self:start}
+.summary h3{font-family:"Playfair Display",serif;font-size:30px}
+.people{display:flex;align-items:center;gap:12px;margin:14px 0 18px;font-size:17px}
+.people input{width:74px;padding:9px;border-radius:10px;border:0;font:inherit;font-size:17px}
+.meter{height:10px;border-radius:999px;background:#ffffff26;overflow:hidden;margin:6px 0 10px}
+.meter i{display:block;height:100%;background:var(--cheese);transition:width .4s}
+.hint{font-size:15px;margin-bottom:16px}
+.summary ul{padding-left:18px;margin:12px 0 22px}
+/* night */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:center}
+.tall{aspect-ratio:4/5;border-radius:24px}
+.hours{list-style:none;margin-top:26px}
+.hours li{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #ffffff18}
+.hours li.today{color:var(--gold);font-weight:700}
+.rv{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:46px}
+.rv blockquote{border:1px solid #e2b45a40;border-radius:20px;padding:30px;font-family:"Playfair Display",serif;font-style:italic;font-size:24px;line-height:1.3}
+.rv cite{display:block;font-family:Karla;font-style:normal;font-size:13px;color:var(--muted);margin-top:14px}
+.map{width:100%;height:420px;border:0;border-radius:24px;filter:invert(.9) hue-rotate(180deg) saturate(.6)}
+footer{position:relative;z-index:2;padding:50px 5vw 120px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;color:var(--muted);font-size:13px;border-top:1px solid #ffffff14}
+.mbar{display:none}
+@media(max-width:900px){
+ .links a:not(.btn){display:none}
+ section{padding:80px 6vw}
+ .trio,.rv{grid-template-columns:1fr}
+ .bgrid,.split{grid-template-columns:1fr}
+ .builder{padding:60px 6vw;margin:0}
+ .opt{grid-template-columns:64px 1fr auto;gap:12px}.opt [data-photo]{width:64px;height:64px}
+ .summary{position:static}
+ .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:95;gap:8px}.mbar a{flex:1;justify-content:center}.mbar .o{flex:0 0 auto;background:var(--night)}
+}
+</style>
+</head>
+<body>
+<div class="demo-bar"><b>Proposta de disseny</b> preparada per Pep per a Can Torreca · No és la web oficial del restaurant</div>
+<nav id="nav"><a class="brand" href="#">Can <i>Torreca</i></a><div class="links"><a href="#taula">Munta la taula</a><a href="#casa">La casa</a><a href="#visita">On som</a><a class="btn" href="#taula">Reservar</a></div></nav>
+
+<header class="hero">
+  <div class="hero-bg" data-photo="fotos/can-torreca/hero.jpg" data-label="El celler"></div>
+  <div class="hero-inner">
+    <div class="eyebrow reveal">Terrassa · Restaurant celler</div>
+    <h1 class="reveal d1">Sopars sota<br>la <i>volta</i><br>del celler.</h1>
+    <p class="reveal d2">Formatges artesans, embotits, la botifarra esparracada i el bikini trufat, en un celler de volta de maó al centre de Terrassa. Obert de dilluns a dissabte, de 20:30 a 23 h.</p>
+    <div class="reveal d3" style="display:flex;gap:12px;flex-wrap:wrap;align-items:center"><a class="btn" href="#taula">Munta la teva taula</a><a class="btn o" href="tel:+34937885422">Trucar</a><span class="status" data-open></span></div>
+  </div>
+</header>
+
+<section id="casa">
+  <div class="wrap">
+    <div class="eyebrow reveal">La casa</div>
+    <h2 class="reveal d1">Producte que <i>s'explica</i><br>a taula.</h2>
+    <div class="trio">
+      <div class="card reveal"><div data-photo="fotos/can-torreca/plato-1.jpg" data-label="Formatges"></div><div class="t"><h3>Els formatges</h3><p>Formatges artesans com els de Tros de Sort (Serrat del Triadó, Costa Negra, Auvella). Lloc ideal per explicar qui els fa.</p></div></div>
+      <div class="card reveal d1"><div data-photo="fotos/can-torreca/plato-4.jpg" data-label="Taula"></div><div class="t"><h3>Les taules</h3><p>Formatges i embotits per compartir, amb espelma i estovalles de quadres.</p></div></div>
+      <div class="card reveal d2"><div data-photo="fotos/can-torreca/plato-3.jpg" data-label="Botifarra esparracada"></div><div class="t"><h3>La botifarra esparracada</h3><p>“Has provat la botifarra esparracada? Que no t'ho expliquin.”</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="builder" id="taula">
+  <div class="wrap">
+    <div class="eyebrow reveal" style="color:var(--wine)">Peça única · Només a Can Torreca</div>
+    <h2 class="reveal d1">Munta la teva <i>taula</i><br>abans d'arribar.</h2>
+    <p class="lead reveal d2" style="margin-top:18px">El client tria què vol compartir segons quants són, veu si en tindran prou i us envia la reserva amb el sopar ja pensat. Menys dubtes a taula, més taules plenes.</p>
+    <div class="bgrid">
+      <div id="opts"></div>
+      <aside class="summary">
+        <h3>La vostra taula</h3>
+        <div class="people">Som <input type="number" id="pax" value="4" min="1" max="30"> persones</div>
+        <div class="meter"><i id="meter"></i></div>
+        <div class="hint" id="hint"></div>
+        <ul id="sum"></ul>
+        <button class="btn" onclick="this.textContent='✓ Demo: reserva enviada amb la comanda'">Reservar amb aquesta taula</button>
+        <p style="font-size:12px;opacity:.75;margin-top:14px">Racions i recomanacions d'exemple: les defineix el restaurant.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div class="tall reveal" data-photo="fotos/can-torreca/local-1.jpg" data-label="Racó del celler"></div>
+    <div>
+      <div class="eyebrow reveal">Només sopars</div>
+      <h2 class="reveal d1">Obrim quan<br>s'<i>encén</i> la nit.</h2>
+      <p class="lead reveal d2" style="margin-top:16px">Parets de pedra, maó vist i llums penjats. I algunes nits, música en directe al piano (pregunteu les dates).</p>
+      <ul class="hours reveal d2" data-hours></ul>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="eyebrow reveal">Ho diuen ells · 4,6 a Google · 881 ressenyes</div>
+    <div class="rv">
+      <blockquote class="reveal">“Awesome food! Very cosy restaurant.”<cite>Google</cite></blockquote>
+      <blockquote class="reveal d1">“Authentic restaurant. Good prices and great food!”<cite>Google</cite></blockquote>
+      <blockquote class="reveal d2">“Really good cheeses selection.”<cite>Google</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="visita" style="padding-top:0">
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow reveal">On som</div>
+      <h2 class="reveal d1">Carrer de la <i>Rutlla,</i> 6</h2>
+      <p class="lead reveal d2" style="margin-top:16px">08221 Terrassa · <a href="tel:+34937885422">93 788 54 22</a><br><a href="https://www.instagram.com/cantorreca/">@cantorreca</a></p>
+    </div>
+    <iframe class="map reveal" loading="lazy" src="https://www.google.com/maps?q=Can%20Torreca%20Terrassa&output=embed" title="Mapa"></iframe>
+  </div>
+</section>
+<footer><span class="brand">Can <i>Torreca</i></span><span>Proposta de disseny de Pep · pepwebbuilder@gmail.com</span></footer>
+<div class="mbar"><a class="btn o" href="tel:+34937885422">☎</a><a class="btn" href="#taula">Munta la taula</a></div>
+
+<script>
+window.HOURS=[[[1230,1380]],[[1230,1380]],[[1230,1380]],[[1230,1380]],[[1230,1380]],[[1230,1380]],[]];
+var items=[["formatges","Taula de formatges i embotits","Per compartir · 1 per cada 3-4 persones",3.5,"plato-4"],["fondue","Fondue de formatges","Per compartir · 1 per cada 2-3 persones",2.5,"plato-6"],["botifarra","Botifarra esparracada","Per compartir · 1 per cada 2 persones",2,"plato-3"],["fuet","Pa amb tomàquet i fuet","Per picar · 1 per cada 2 persones",2,"plato-2"],["bikini","Bikini trufat","Individual",1,"plato-5"],["tiramisu","Tiramisú","Postre individual",0,"plato-0"]];
+var q={formatges:1,fondue:1,botifarra:1,fuet:0,bikini:1,tiramisu:0};
+function render(){
+ document.getElementById('opts').innerHTML=items.map(function(it){return '<div class="opt"><div data-photo="fotos/can-torreca/'+it[4]+'.jpg" class="no-photo"></div><div><h4>'+it[1]+'</h4><small>'+it[2]+'</small></div><div class="qty"><button data-k="'+it[0]+'" data-d="-1" aria-label="menys">−</button><b>'+q[it[0]]+'</b><button data-k="'+it[0]+'" data-d="1" aria-label="més">+</button></div></div>'}).join('');
+ document.querySelectorAll('.qty button').forEach(function(b){b.onclick=function(){var k=b.dataset.k;q[k]=Math.max(0,q[k]+(+b.dataset.d));render()}});
+ document.querySelectorAll('.opt [data-photo]').forEach(function(el){var i=new Image();i.onload=function(){el.classList.remove('no-photo');el.style.background='center/cover no-repeat url("'+el.dataset.photo+'")'};i.src=el.dataset.photo});
+ var pax=+document.getElementById('pax').value||1,cover=items.reduce(function(s,it){return s+q[it[0]]*it[3]},0),pct=Math.min(100,Math.round(cover/pax*100));
+ document.getElementById('meter').style.width=pct+'%';
+ document.getElementById('hint').textContent=cover>=pax?'👌 Teniu menjar de sobres per a '+pax+' persones.':'🧀 Per a '+pax+' persones us en faltaria una mica: afegiu una taula o una fondue.';
+ document.getElementById('sum').innerHTML=items.filter(function(it){return q[it[0]]}).map(function(it){return '<li>'+q[it[0]]+' × '+it[1]+'</li>'}).join('')||'<li>Encara no hi ha res</li>';
+}
+document.getElementById('pax').oninput=render;render();
+var nav=document.getElementById('nav');window.addEventListener('scroll',function(){nav.classList.toggle('solid',scrollY>60)},{passive:true});
+// Shared demo helpers (inlined into each page at build time)
+(function(){
+  // Photo slots: load fotos/<slug>/<file>; if missing, show labelled textured placeholder
+  document.querySelectorAll('[data-photo]').forEach(function(el){
+    var src=el.getAttribute('data-photo'), img=new Image();
+    img.onload=function(){el.style.backgroundImage='url("'+src+'")';el.classList.add('has-photo')};
+    img.onerror=function(){el.classList.add('no-photo');if(!el.querySelector('.ph-label')){var s=document.createElement('span');s.className='ph-label';s.textContent=el.getAttribute('data-label')||'Foto';el.appendChild(s)}};
+    img.src=src;
+  });
+  // Reveal on scroll
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els=document.querySelectorAll('.reveal');
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')})}
+  else{var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.15});els.forEach(function(e){io.observe(e)})}
+  // Hero parallax
+  var hero=document.querySelector('.hero-bg');
+  if(hero&&!reduce){window.addEventListener('scroll',function(){var y=window.scrollY;if(y<900)hero.style.transform='translateY('+(y*0.25)+'px) scale(1.08)'},{passive:true})}
+  // Open now: window.HOURS = [[mon...],...] each day = list of [startMin,endMin]
+  if(window.HOURS){
+    var d=new Date(),t=(d.getDay()+6)%7,m=d.getHours()*60+d.getMinutes(),today=window.HOURS[t]||[];
+    var open=today.some(function(r){return m>=r[0]&&m<r[1]});
+    var next=null;for(var k=0;k<8&&!next;k++){var day=(t+k)%7;(window.HOURS[day]||[]).forEach(function(r){if(!next&&(k>0||r[0]>m))next={k:k,day:day,s:r[0]}})}
+    var names=window.DAYNAMES||['dilluns','dimarts','dimecres','dijous','divendres','dissabte','diumenge'];
+    var fmt=function(x){return String(Math.floor(x/60)).padStart(2,'0')+':'+String(x%60).padStart(2,'0')};
+    var txt=open?(window.TXT_OPEN||'Obert ara'):(next?((window.TXT_CLOSED||'Tancat · obrim ')+(next.k===0?'avui':next.k===1?'demà':names[next.day])+' a les '+fmt(next.s)):'Tancat');
+    document.querySelectorAll('[data-open]').forEach(function(el){el.textContent=txt;el.classList.add(open?'is-open':'is-closed')});
+    document.querySelectorAll('[data-hours]').forEach(function(el){
+      el.innerHTML=window.HOURS.map(function(r,i){return '<li class="'+(i===t?'today':'')+'"><span>'+names[i].charAt(0).toUpperCase()+names[i].slice(1)+'</span><span>'+(r.length?r.map(function(x){return fmt(x[0])+'–'+fmt(x[1])}).join(' · '):'Tancat')+'</span></li>'}).join('')});
+  }
+  // Demo forms
+  document.querySelectorAll('form[data-demo]').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();f.innerHTML='<p class="demo-ok">✓ Demo: aquí us arribaria la reserva al mòbil o al correu.</p>'})});
+  // Tabs
+  document.querySelectorAll('[data-tabs]').forEach(function(w){var bs=w.querySelectorAll('[data-tab]');bs.forEach(function(b){b.addEventListener('click',function(){bs.forEach(function(x){x.classList.remove('on')});b.classList.add('on');var id=b.getAttribute('data-tab');document.querySelectorAll('[data-panel]').forEach(function(p){p.hidden=p.getAttribute('data-panel')!==id})})})});
+})();
+
+</script>
+</body>
+</html>
