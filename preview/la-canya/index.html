@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="ca"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>La Canya de Caldes · Proposta de web</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--c:#24412f;--a:#e2b04a;--ink:#1b1b1b;--paper:#faf7f2}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+a{color:inherit}em{font-style:italic;color:var(--a)}
+.bar{position:fixed;top:0;left:0;right:0;z-index:20;background:#111;color:#fff;font-size:12px;text-align:center;padding:6px 10px}
+nav{position:fixed;top:30px;left:0;right:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:16px 6vw;color:#fff}
+nav b{font-family:Fraunces,serif;font-size:22px;font-weight:600}
+.btn{display:inline-block;background:var(--a);color:#111;text-decoration:none;font-weight:600;padding:12px 22px;border-radius:999px;font-size:14px;border:0;cursor:pointer}
+.btn.line{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.6)}
+.hero{min-height:100vh;display:flex;align-items:flex-end;padding:120px 6vw 80px;color:#fff;position:relative;overflow:hidden;
+ background:radial-gradient(120% 90% at 80% 20%,color-mix(in srgb,var(--a) 35%,transparent),transparent 60%),linear-gradient(160deg,var(--c),#0d0d0d)}
+.hero:after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:4px 4px;pointer-events:none}
+.hero .in{position:relative;z-index:1;max-width:780px}
+.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:12px;opacity:.8}
+h1{font-family:Fraunces,serif;font-weight:400;font-size:clamp(44px,8vw,96px);line-height:1.02;margin:18px 0 22px}
+.stars{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.1);padding:8px 14px;border-radius:999px;font-size:14px;margin-bottom:26px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.open{font-size:13px;opacity:.85}
+section{padding:90px 6vw}h2{font-family:Fraunces,serif;font-weight:400;font-size:clamp(32px,4.5vw,52px);line-height:1.1;margin:10px 0 18px}
+.two{display:grid;grid-template-columns:1.1fr 1fr;gap:6vw;align-items:center}
+.ph{border-radius:18px;min-height:340px;display:flex;align-items:flex-end;padding:18px;color:#fff;font-size:13px;letter-spacing:.06em;
+ background:linear-gradient(135deg,color-mix(in srgb,var(--c) 85%,#fff),var(--c));position:relative;overflow:hidden}
+.ph:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.05) 0 2px,transparent 2px 14px)}
+.ph span{position:relative;background:rgba(0,0,0,.35);padding:6px 10px;border-radius:8px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}.grid3 .ph{min-height:260px}
+.dark{background:var(--c);color:#fff}
+.hours{list-style:none;max-width:420px}.hours li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.15)}.hours li.today{color:var(--a);font-weight:600}
+.book{text-align:center}.book p{max-width:560px;margin:0 auto 26px;opacity:.85}
+footer{padding:30px 6vw;font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;opacity:.7}
+@media(max-width:800px){.two,.grid3{grid-template-columns:1fr}nav .btn{display:none}}
+</style></head><body>
+<div class="bar">Proposta de web per a La Canya de Caldes · feta per Pep (pepwebbuilder@gmail.com) · les fotos es substitueixen per les vostres</div>
+<nav><b>La Canya de Caldes</b><a class="btn" href="#reserva">Reservar</a></nav>
+<header class="hero"><div class="in">
+ <div class="eyebrow">Caldes de Montbui · Restaurant</div>
+ <h1>Al carrer del Forn,<br><em>el que surt del foc.</em></h1>
+ <div class="stars">★ 4,6 a Google · 198 ressenyes</div>
+ <div class="cta"><a class="btn" href="#reserva">Reservar taula</a><a class="btn line" href="#casa">Coneix-nos</a><span class="open" data-open></span></div>
+</div></header>
+<section id="casa" class="two">
+ <div><div class="eyebrow" style="color:var(--c)">La casa</div><h2>Benvinguts a<br><em>La Canya de Caldes</em></h2><p>Un racó del nucli antic de Caldes per dinar i sopar, amb cuina feta al moment i bon ambient.</p></div>
+ <div class="ph"><span>La vostra foto del local</span></div>
+</section>
+<section style="padding-top:0">
+ <div class="eyebrow" style="color:var(--c)">La cuina</div><h2>El que ens<br><em>fa venir de gust.</em></h2>
+ <div class="grid3"><div class="ph"><span>Plat estrella</span></div><div class="ph"><span>Plat de temporada</span></div><div class="ph"><span>Postres de la casa</span></div></div>
+ <p style="margin-top:22px;font-size:14px">Més plats a <a href="https://instagram.com/lacanyadecaldes" target="_blank" rel="noopener">@lacanyadecaldes</a></p>
+</section>
+<section class="dark two"><div><div class="eyebrow">Horaris</div><h2>Quan<br><em>ens trobeu.</em></h2></div><ul class="hours" data-hours></ul></section>
+<section class="book" id="reserva" style="background:#fff">
+ <div class="eyebrow" style="color:var(--c)">Reserva directa · sense comissions</div><h2>Us guardem<br><em>la taula.</em></h2>
+ <p>Escolliu dia, hora i persones i la reserva us arriba directament al WhatsApp o al telèfon del restaurant.</p>
+ <a class="btn" href="https://wa.me/34711513857?text=Hola%21%20Voldria%20reservar%20taula%20a%20La%20Canya%20de%20Caldes">Reservar per WhatsApp</a> <a class="btn" style="background:var(--c);color:#fff" href="tel:+34711513857">Trucar</a>
+ <p style="margin-top:26px;font-size:14px">Carrer del Forn, 22, Caldes de Montbui · <a href="https://www.google.com/maps/search/?api=1&query=La%20Canya%20de%20Caldes%20Carrer%20del%20Forn%2C%2022%2C%20Caldes%20de%20Montbui" target="_blank" rel="noopener">Com arribar-hi</a></p>
+</section>
+<footer><span>© La Canya de Caldes · Caldes de Montbui</span><span>Proposta de disseny de Pep · pepwebbuilder@gmail.com</span></footer>
+<script>
+window.HOURS=[[[780, 960]], [], [[780, 960], [1140, 1380]], [[780, 960], [1140, 1440]], [[780, 960], [1140, 1440]], [[720, 960], [1140, 1440]], [[720, 960]]];
+(function(){if(!window.HOURS)return;var names=['dilluns','dimarts','dimecres','dijous','divendres','dissabte','diumenge'];var d=new Date(),t=(d.getDay()+6)%7,m=d.getHours()*60+d.getMinutes();
+var f=function(x){x=x%1440;return String(Math.floor(x/60)).padStart(2,'0')+':'+String(x%60).padStart(2,'0')};
+var open=(HOURS[t]||[]).some(function(r){return m>=r[0]&&m<r[1]});var nx=null;for(var k=0;k<8&&!nx;k++){var day=(t+k)%7;(HOURS[day]||[]).forEach(function(r){if(!nx&&(k>0||r[0]>m))nx={k:k,d:day,s:r[0]}})}
+var txt=open?'● Obert ara':(nx?'Tancat · obrim '+(nx.k==0?'avui':nx.k==1?'demà':names[nx.d])+' a les '+f(nx.s):'');document.querySelectorAll('[data-open]').forEach(function(e){e.textContent=txt});
+document.querySelectorAll('[data-hours]').forEach(function(e){e.innerHTML=HOURS.map(function(r,i){return '<li class="'+(i==t?'today':'')+'"><span>'+names[i].charAt(0).toUpperCase()+names[i].slice(1)+'</span><span>'+(r.length?r.map(function(x){return f(x[0])+'–'+f(x[1])}).join(' · '):'Tancat')+'</span></li>'}).join('')})})();
+</script></body></html>
