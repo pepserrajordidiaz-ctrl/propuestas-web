@@ -13,7 +13,7 @@ nav b{font-family:Fraunces,serif;font-size:22px;font-weight:600}
 .btn{display:inline-block;background:var(--a);color:#111;text-decoration:none;font-weight:600;padding:12px 22px;border-radius:999px;font-size:14px;border:0;cursor:pointer}
 .btn.line{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.6)}
 .hero{min-height:100vh;display:flex;align-items:flex-end;padding:120px 6vw 80px;color:#fff;position:relative;overflow:hidden;
- background:radial-gradient(120% 90% at 80% 20%,color-mix(in srgb,var(--a) 35%,transparent),transparent 60%),linear-gradient(160deg,var(--c),#0d0d0d)}
+ background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.75)),url(fotos/hero.jpg) center/cover,radial-gradient(120% 90% at 80% 20%,color-mix(in srgb,var(--a) 35%,transparent),transparent 60%),linear-gradient(160deg,var(--c),#0d0d0d)}
 .hero:after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:4px 4px;pointer-events:none}
 .hero .in{position:relative;z-index:1;max-width:780px}
 .eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:12px;opacity:.8}
@@ -25,7 +25,7 @@ section{padding:90px 6vw}h2{font-family:Fraunces,serif;font-weight:400;font-size
 .ph{border-radius:18px;min-height:340px;display:flex;align-items:flex-end;padding:18px;color:#fff;font-size:13px;letter-spacing:.06em;
  background:linear-gradient(135deg,color-mix(in srgb,var(--c) 85%,#fff),var(--c));position:relative;overflow:hidden}
 .ph:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.05) 0 2px,transparent 2px 14px)}
-.ph span{position:relative;background:rgba(0,0,0,.35);padding:6px 10px;border-radius:8px}
+.ph.img{background-size:cover;background-position:center}.ph.img:before{display:none}.ph span{position:relative;background:rgba(0,0,0,.35);padding:6px 10px;border-radius:8px}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}.grid3 .ph{min-height:260px}
 .dark{background:var(--c);color:#fff}
 .hours{list-style:none;max-width:420px}.hours li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.15)}.hours li.today{color:var(--a);font-weight:600}
@@ -33,7 +33,7 @@ section{padding:90px 6vw}h2{font-family:Fraunces,serif;font-weight:400;font-size
 footer{padding:30px 6vw;font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;opacity:.7}
 @media(max-width:800px){.two,.grid3{grid-template-columns:1fr}nav .btn{display:none}}
 </style></head><body>
-<div class="bar">Proposta de web per a Can Rajoler · feta per Pep (pepwebbuilder@gmail.com) · les fotos es substitueixen per les vostres</div>
+<div class="bar">Proposta de web per a Can Rajoler · feta per Pep (pepwebbuilder@gmail.com) · fotos provisionals de Google Maps, es substitueixen per les vostres</div>
 <nav><b>Can Rajoler</b><a class="btn" href="#reserva">Reservar</a></nav>
 <header class="hero"><div class="in">
  <div class="eyebrow">Mollet del Vallès · Cuina mediterrània</div>
@@ -43,11 +43,11 @@ footer{padding:30px 6vw;font-size:13px;display:flex;justify-content:space-betwee
 </div></header>
 <section id="casa" class="two">
  <div><div class="eyebrow" style="color:var(--c)">La casa</div><h2>Benvinguts a<br><em>Can Rajoler</em></h2><p>A Mollet des de primera hora: esmorzars de forquilla i un menú de migdia de cuina mediterrània.</p></div>
- <div class="ph"><span>La vostra foto del local</span></div>
+ <div class="ph img" style="background-image:url(fotos/local.jpg)"></div>
 </section>
 <section style="padding-top:0">
  <div class="eyebrow" style="color:var(--c)">La cuina</div><h2>El que ens<br><em>fa venir de gust.</em></h2>
- <div class="grid3"><div class="ph"><span>Plat estrella</span></div><div class="ph"><span>Plat de temporada</span></div><div class="ph"><span>Postres de la casa</span></div></div>
+ <div class="grid3"><div class="ph img" style="background-image:url(fotos/p1.jpg)"></div><div class="ph img" style="background-image:url(fotos/p2.jpg)"></div><div class="ph img" style="background-image:url(fotos/p3.jpg)"></div></div>
  <p style="margin-top:22px;font-size:14px">Més plats a <a href="https://instagram.com/canrajoler.restaurant" target="_blank" rel="noopener">@canrajoler.restaurant</a></p>
 </section>
 <section class="dark two"><div><div class="eyebrow">Horaris</div><h2>Quan<br><em>ens trobeu.</em></h2></div><ul class="hours" data-hours></ul></section>
