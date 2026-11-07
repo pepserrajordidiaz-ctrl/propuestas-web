@@ -96,7 +96,7 @@ footer{padding:30px 6vw 90px;font-size:13px;display:flex;justify-content:space-b
  <li><b>«Obert ara»</b> i horaris que s'actualitzen sols cada dia</li>
  <li><b>Les vostres ressenyes de Google</b> ben visibles</li>
  <li><b>Botó de grups i celebracions</b> per captar sopars d'empresa i aniversaris</li>
- <li><b>Mapa i com arribar</b>, i barra de trucar/reservar al mòbil</li>
+ <li><b>Mapa i com arribar</b>, i barra de trucar al mòbil</li>
  <li><b>Les vostres fotos, carta i colors</b>, i tota la informació que vulgueu afegir</li>
  <li><b>Preparada per a Google</b> i ràpida al mòbil</li>
  </ul>
@@ -104,7 +104,7 @@ footer{padding:30px 6vw 90px;font-size:13px;display:flex;justify-content:space-b
  <button class="btn" style="margin-top:16px" onclick="document.getElementById('owner').classList.remove('on')">Tancar</button>
 </div></div>
 <script>
-window.HOURS=[[[600, 1020]], [], [], [[600, 1020]], [[600, 1020], [1200, 1410]], [[600, 1020], [1200, 1410]], [[600, 1080]]];var TEL="34937379933",NOM="La Perola",IG="laperoladaira";
+window.HOURS=[[[600, 1020]], [], [], [[600, 1020]], [[600, 1020], [1200, 1410]], [[600, 1020], [1200, 1410]], [[600, 1080]]];var TEL="34937379933",NOM="La Perola",IG="laperoladaira",MSG="Hola! Voldria reservar taula a",F3="Persones";
 (function(){var names=['dilluns','dimarts','dimecres','dijous','divendres','dissabte','diumenge'];var d=new Date(),t=(d.getDay()+6)%7,m=d.getHours()*60+d.getMinutes();
 var f=function(x){x=x%1440;return String(Math.floor(x/60)).padStart(2,'0')+':'+String(x%60).padStart(2,'0')};
 if(window.HOURS){var open=(HOURS[t]||[]).some(function(r){return m>=r[0]&&m<r[1]});var nx=null;for(var k=0;k<8&&!nx;k++){var day=(t+k)%7;(HOURS[day]||[]).forEach(function(r){if(!nx&&(k>0||r[0]>m))nx={k:k,d:day,s:r[0]}})}
@@ -112,6 +112,6 @@ var txt=open?'● Obert ara':(nx?'Tancat · obrim '+(nx.k==0?'avui':nx.k==1?'dem
 document.querySelectorAll('[data-hours]').forEach(function(e){e.innerHTML=HOURS.map(function(r,i){return '<li class="'+(i==t?'today':'')+'"><span>'+names[i].charAt(0).toUpperCase()+names[i].slice(1)+'</span><span>'+(r.length?r.map(function(x){return f(x[0])+'–'+f(x[1])}).join(' · '):'Tancat')+'</span></li>'}).join('')})}
 var di=document.querySelector('form.res input[type=date]');if(di){di.min=new Date().toISOString().slice(0,10)}
 var fm=document.querySelector('form.res');if(fm)fm.addEventListener('submit',function(e){e.preventDefault();var v=function(n){return (fm.elements[n]||{}).value||''};
-var msg='Hola! Voldria reservar taula a '+NOM+':\n- Dia: '+v('dia')+'\n- Hora: '+v('hora')+'\n- Persones: '+v('pax')+'\n- Nom: '+v('nom')+(v('nota')?'\n- Comentaris: '+v('nota'):'');
+var msg=MSG+' '+NOM+':\n- Dia: '+v('dia')+'\n- Hora: '+v('hora')+'\n- '+F3+': '+v('pax')+'\n- Nom: '+v('nom')+(v('nota')?'\n- Comentaris: '+v('nota'):'');
 if(TEL)window.open('https://wa.me/'+TEL+'?text='+encodeURIComponent(msg),'_blank');else if(IG){try{navigator.clipboard.writeText(msg)}catch(e){}window.open('https://ig.me/m/'+IG,'_blank')}else alert(msg)})})();
 </script></body></html>
