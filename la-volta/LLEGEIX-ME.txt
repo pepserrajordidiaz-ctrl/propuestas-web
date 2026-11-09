@@ -1,0 +1,42 @@
+WEB DE LA VOLTA – Instruccions per instal·lar-la i editar-la
+=============================================================
+
+CONTINGUT DEL ZIP
+- index.html .......... tota la web (textos, estil i funcionament en un sol fitxer)
+- fotos/la-volta/ ..... les imatges de la web
+
+INSTAL·LACIÓ
+És una web estàtica: no necessita base de dades, PHP ni WordPress.
+Només cal pujar la carpeta tal qual (index.html + carpeta fotos) a qualsevol
+allotjament: Cloudflare Pages, Netlify, GitHub Pages o el hosting que ja tingueu.
+Al Cloudflare Pages n'hi ha prou d'arrossegar la carpeta descomprimida a
+"Upload assets" i connectar-hi el domini.
+
+CANVIAR IMATGES
+La manera més fàcil: substituir el fitxer per un altre amb EXACTAMENT el mateix
+nom (per exemple, posar una foto nova i anomenar-la hero.jpg).
+- hero.jpg ....... foto de portada (millor horitzontal, mínim 1.600 px d'amplada)
+- local-1.jpg .... foto de la sala (bloc de reserves)
+- plato-X.jpg .... fotos dels plats de la carta
+Si es vol fer servir un nom nou, a index.html cal buscar l'atribut
+data-photo="fotos/la-volta/..." i canviar-hi la ruta.
+Consell: comprimir les fotos (per exemple a squoosh.app) perquè no passin de 400 KB.
+
+CANVIAR TEXTOS, PLATS I PREUS
+Obrir index.html amb qualsevol editor de text (VS Code, Notepad++...) i buscar
+el text que es vol canviar (Ctrl+F). Els textos són dins de l'HTML, en català,
+i es poden editar directament. Cada plat de la carta és un bloc
+<div class="dish">...</div>: es pot copiar per afegir-ne un de nou o esborrar-lo.
+
+TELÈFON, ADREÇA I HORARI
+Telèfon: buscar "634" (apareix als enllaços tel:+34634407770 i al text).
+Adreça i mapa: secció id="visita".
+Horari: al final del fitxer, dins l'script, la variable window.HOURS té les
+hores d'obertura de dilluns a diumenge en minuts (13:00 = 780, 20:30 = 1230).
+La fa servir l'indicador "Obert ara / Tancat".
+
+COLORS I TIPOGRAFIA
+A l'inici del fitxer, dins <style>, hi ha les variables :root (--ink, --cream,
+--gold...). Canviant-les es canvia el color de tota la web.
+
+Per a qualsevol dubte: Pep Serrajordi · pepwebbuilder@gmail.com

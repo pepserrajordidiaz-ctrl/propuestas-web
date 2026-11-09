@@ -122,6 +122,7 @@ h2 em{font-style:italic;color:var(--terra)}
 .book .img{min-height:720px}
 .book .form{padding:110px 6vw}
 .book h2 em{color:var(--gold)}
+.book .tel-big{display:block;margin-top:26px;font-family:inherit;font-size:clamp(34px,4.5vw,58px);color:var(--gold);text-decoration:none;letter-spacing:.02em}
 form{display:grid;gap:14px;margin-top:36px;max-width:460px}
 .f2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#bfae99;display:grid;gap:8px}
@@ -222,7 +223,7 @@ footer .brand{font-family:"Cormorant Garamond",serif;font-style:italic;font-size
   <div class="wrap">
     <div class="carta-head">
       <div><div class="eyebrow reveal" style="color:var(--terra)">La carta</div><h2 class="reveal d1">Per obrir <em>la gana.</em></h2></div>
-      <p class="lead reveal d2">La carta sempre al dia: la xef la canvia des del mòbil i surt aquí al moment, amb foto de cada plat.</p>
+      <p class="lead reveal d2">Cuina italiana de qualitat amb producte de proximitat.</p>
     </div>
     <div class="tabs" data-tabs>
       <button class="on" data-tab="e">Per començar</button><button data-tab="p">Pasta i risotto</button><button data-tab="s">Peix i carn</button><button data-tab="d">Postres</button>
@@ -274,16 +275,11 @@ footer .brand{font-family:"Cormorant Garamond",serif;font-style:italic;font-size
 <section class="book" id="reserva">
   <div class="img" data-photo="fotos/la-volta/local-1.jpg" data-label="La sala"></div>
   <div class="form">
-    <div class="eyebrow">Reserva directa · Sense comissions</div>
+    <div class="eyebrow">Reserves per telèfon</div>
     <h2 style="margin-top:14px">Us guardem<br><em>la taula.</em></h2>
-    <form data-demo>
-      <div class="f2"><label>Dia<input type="date" required></label><label>Hora<select><option>13:00</option><option>13:30</option><option>14:00</option><option>20:00</option><option>20:30</option><option>21:00</option></select></label></div>
-      <label>Persones<select><option>2</option><option>3</option><option>4</option><option>5</option><option>6 o més</option></select></label>
-      <label>On voleu seure</label>
-      <div class="chips"><label style="all:unset"><input type="radio" name="z" checked><span>Sala</span></label><label style="all:unset"><input type="radio" name="z"><span>Jardí</span></label><label style="all:unset"><input type="radio" name="z"><span>Sala privada (grups)</span></label></div>
-      <label>Nom i telèfon<input required placeholder=" "></label>
-      <button class="btn" style="justify-self:start;margin-top:10px">Confirmar reserva</button>
-    </form>
+    <p class="lead" style="margin-top:22px;color:var(--cream);opacity:.85">Per reservar, truqueu-nos i us atendrem encantats.</p>
+    <a class="tel-big" href="tel:+34634407770">634 40 77 70</a>
+    <a class="btn" href="tel:+34634407770" style="margin-top:18px">☎ Trucar per reservar</a>
   </div>
 </section>
 
